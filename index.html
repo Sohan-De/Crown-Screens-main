@@ -850,6 +850,52 @@
             text-align: center;
         }
 
+        /* Mobile responsive styles for logout modal */
+        @media (max-width: 480px) {
+            .logout-modal-content {
+                max-width: 80vw;
+                width: 80vw;
+                margin: 0 10vw;
+                padding: 2rem;
+            }
+            
+            .modal-content {
+                padding: 1.5rem;
+                margin: 20px;
+                max-width: calc(100vw - 40px);
+                width: calc(100vw - 40px);
+            }
+            
+            .modal-header h3 {
+                font-size: 1.3rem;
+            }
+            
+            .logout-modal-content .modal-body p {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+            
+            .logout-subtitle {
+                font-size: 0.9rem !important;
+            }
+            
+            .modal-footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .modal-footer .btn {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .logout-icon {
+                font-size: 3rem;
+                margin-bottom: 15px;
+            }
+        }
+
         .modal-header {
             display: flex;
             justify-content: space-between;

@@ -367,6 +367,63 @@
             }
         }
 
+        /* Very small mobile devices (under 370px) */
+        @media (max-width: 370px) {
+            .terms-container {
+                padding: 0 0.25rem;
+            }
+
+            .terms-content {
+                padding: 1rem;
+                margin: 0 5px;
+            }
+
+            .contact-info {
+                padding: 1rem;
+                margin: 1rem 0;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+
+            .contact-info h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .contact-info p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+                margin-bottom: 0.4rem;
+            }
+
+            .contact-info a {
+                word-break: break-all;
+                font-size: 0.85rem;
+            }
+
+            .terms-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .terms-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .terms-section p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .terms-section ul {
+                margin-left: 1rem;
+            }
+
+            .terms-section li {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+        }
+
         /* Logout Modal Styles */
         .modal-overlay {
             position: fixed;
@@ -406,6 +463,47 @@
         .logout-modal-content {
             max-width: 450px;
             text-align: center;
+        }
+
+        /* Mobile responsive styles for logout modal */
+        @media (max-width: 480px) {
+            .logout-modal-content {
+                max-width: 80vw;
+                width: 80vw;
+                margin: 0 10vw;
+                padding: 2rem;
+            }
+            
+            .modal-content {
+                padding: 1.5rem;
+                margin: 20px;
+                max-width: calc(100vw - 40px);
+                width: calc(100vw - 40px);
+            }
+            
+            .modal-header h3 {
+                font-size: 1.3rem;
+            }
+            
+            .logout-modal-content .modal-body p {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+            
+            .logout-subtitle {
+                font-size: 0.9rem !important;
+            }
+            
+            .modal-footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .logout-confirm-btn,
+            .btn-outline {
+                width: 100%;
+                min-width: unset;
+            }
         }
 
         .modal-header {
