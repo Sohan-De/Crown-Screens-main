@@ -939,6 +939,18 @@
             overflow: hidden;
         }
         
+        /* Make edit plan modal not responsive on mobile */
+        @media (max-width: 480px) {
+            #edit-plan-modal .modal-content {
+                min-width: 450px !important;
+                width: 450px !important;
+                max-width: 450px !important;
+                margin: 0 !important;
+                transform: scale(0.8) !important;
+                transform-origin: center !important;
+            }
+        }
+        
         .modal-content::before {
             content: '';
             position: absolute;
