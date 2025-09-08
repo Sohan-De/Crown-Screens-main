@@ -2040,20 +2040,22 @@
         setTimeout(() => {
             const tableBody = document.getElementById('users-table-body');
             if (tableBody) {
-                const buttons = tableBody.querySelectorAll('.action-btn');
+                // Only remove user-specific action buttons, not all action buttons
+                const buttons = tableBody.querySelectorAll('button[onclick*="editUser"], button[onclick*="deleteUser"]');
                 buttons.forEach(button => button.remove());
-                console.log('Removed any remaining action buttons from user table');
+                console.log('Removed any remaining user action buttons from user table');
             }
         }, 100);
         
-        // More aggressive button removal
+        // More aggressive button removal - only for users table
         setInterval(() => {
             const tableBody = document.getElementById('users-table-body');
             if (tableBody) {
-                const buttons = tableBody.querySelectorAll('.action-btn, button[onclick*="editUser"], button[onclick*="deleteUser"]');
+                // Only remove buttons that are specifically for user management
+                const buttons = tableBody.querySelectorAll('button[onclick*="editUser"], button[onclick*="deleteUser"]');
                 if (buttons.length > 0) {
                     buttons.forEach(button => button.remove());
-                    console.log('Force removed', buttons.length, 'action buttons from user table');
+                    console.log('Force removed', buttons.length, 'user action buttons from user table');
                 }
             }
         }, 1000);
