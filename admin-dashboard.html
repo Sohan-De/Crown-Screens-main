@@ -280,27 +280,6 @@
         }
         
         /* Keys Tab Styles */
-        .key-stats {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .key-stat {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            flex: 1;
-            border: 1px solid rgba(0, 212, 255, 0.4);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-        
-        .key-stat h3 {
-            margin: 0;
-            color: #00d4ff;
-            font-size: 14px;
-        }
         
         /* Hamburger Menu Styles */
         .hamburger-menu {
@@ -457,6 +436,12 @@
             .admin-table th,
             .admin-table td {
                 padding: 8px 6px;
+                text-align: left !important;
+            }
+            
+            /* Ensure status column is left-aligned on tablet */
+            .admin-table td:nth-child(4) {
+                text-align: left !important;
             }
         }
         
@@ -651,6 +636,12 @@
                 padding: 8px 6px;
                 min-width: 100px;
                 font-size: 0.8rem;
+                text-align: left !important;
+            }
+            
+            /* Ensure status column is left-aligned on mobile */
+            .admin-table td:nth-child(4) {
+                text-align: left !important;
             }
             
             .tab-button {
@@ -668,12 +659,6 @@
             }
         }
         
-        .key-stat p {
-            margin: 5px 0 0 0;
-            font-size: 24px;
-            font-weight: bold;
-            color: #00d4ff;
-        }
         
         .add-key-section {
             padding: 20px;
@@ -954,6 +939,100 @@
                 margin-left: -225px !important;
                 margin-top: -180px !important;
                 margin-bottom: 20px !important;
+            }
+        }
+        
+        /* Make edit key modal responsive on mobile */
+        @media (max-width: 480px) {
+            #edit-key-modal .modal-content {
+                width: 95% !important;
+                max-width: 95% !important;
+                min-width: auto !important;
+                margin: 0 auto !important;
+                padding: 15px !important;
+                transform: none !important;
+                position: fixed !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                margin-left: 0 !important;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            
+            #edit-key-modal .modal-header {
+                padding: 15px !important;
+            }
+            
+            #edit-key-modal .modal-body {
+                padding: 15px !important;
+            }
+            
+            #edit-key-modal .form-group {
+                margin: 15px 0 !important;
+            }
+            
+            #edit-key-modal .form-control {
+                padding: 12px !important;
+                font-size: 14px !important;
+            }
+            
+            #edit-key-modal .form-actions {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            
+            #edit-key-modal .btn {
+                width: 100% !important;
+                padding: 12px !important;
+                font-size: 14px !important;
+            }
+        }
+        
+        /* Make add key modal responsive on mobile */
+        @media (max-width: 480px) {
+            #add-key-modal .modal-content {
+                width: 95% !important;
+                max-width: 95% !important;
+                min-width: auto !important;
+                margin: 0 auto !important;
+                padding: 15px !important;
+                transform: none !important;
+                position: fixed !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                margin-left: 0 !important;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            
+            #add-key-modal .modal-header {
+                padding: 15px !important;
+            }
+            
+            #add-key-modal .modal-body {
+                padding: 15px !important;
+            }
+            
+            #add-key-modal .form-group {
+                margin: 15px 0 !important;
+            }
+            
+            #add-key-modal .form-control {
+                padding: 12px !important;
+                font-size: 14px !important;
+            }
+            
+            #add-key-modal .form-actions {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            
+            #add-key-modal .btn {
+                width: 100% !important;
+                padding: 12px !important;
+                font-size: 14px !important;
             }
         }
         
@@ -1658,33 +1737,6 @@
             
             <!-- Keys Tab -->
             <div id="keys-tab" class="tab-content">
-                <!-- Key Statistics -->
-                <div class="key-stats">
-                    <div class="key-stat">
-                        <h3>Total Keys</h3>
-                        <p id="total-keys">0</p>
-                    </div>
-                    <div class="key-stat">
-                        <h3>Used Keys</h3>
-                        <p id="used-keys">0</p>
-                    </div>
-                    <div class="key-stat">
-                        <h3>Available Keys</h3>
-                        <p id="available-keys">0</p>
-                    </div>
-                    <div class="key-stat">
-                        <h3>Free Plan Keys</h3>
-                        <p id="free-keys">0</p>
-                    </div>
-                    <div class="key-stat">
-                        <h3>Pro Plan Keys</h3>
-                        <p id="pro-keys">0</p>
-                    </div>
-                    <div class="key-stat">
-                        <h3>Business Plan Keys</h3>
-                        <p id="business-keys">0</p>
-                    </div>
-                </div>
 
                 
                 <!-- Keys Table -->
@@ -2643,8 +2695,6 @@
 
                 console.log('Loaded keys:', keys);
                 
-                // Update statistics
-                updateKeyStatistics(keys);
                 
                 // Display keys in table
                 displayKeys(keys);
@@ -2657,25 +2707,6 @@
             }
         }
 
-        // Update key statistics
-        function updateKeyStatistics(keys) {
-            const totalKeys = keys.length;
-            const usedKeys = keys.filter(key => key.used === true).length;
-            const availableKeys = totalKeys - usedKeys;
-            
-            // Count keys by plan
-            const freeKeys = keys.filter(key => key.plan_id === 1).length;
-            const proKeys = keys.filter(key => key.plan_id === 2).length;
-            const businessKeys = keys.filter(key => key.plan_id === 3).length;
-
-            // Update UI
-            document.getElementById('total-keys').textContent = totalKeys;
-            document.getElementById('used-keys').textContent = usedKeys;
-            document.getElementById('available-keys').textContent = availableKeys;
-            document.getElementById('free-keys').textContent = freeKeys;
-            document.getElementById('pro-keys').textContent = proKeys;
-            document.getElementById('business-keys').textContent = businessKeys;
-        }
 
         // Display keys in table
         function displayKeys(keys) {
