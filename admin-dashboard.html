@@ -2033,32 +2033,8 @@
             tableBody.innerHTML = html;
         }
         
-        // Cache buster - Force refresh of user table
-        console.log('User table refreshed - no action buttons');
-        
-        // Force clear any cached button content
-        setTimeout(() => {
-            const tableBody = document.getElementById('users-table-body');
-            if (tableBody) {
-                // Only remove user-specific action buttons, not all action buttons
-                const buttons = tableBody.querySelectorAll('button[onclick*="editUser"], button[onclick*="deleteUser"]');
-                buttons.forEach(button => button.remove());
-                console.log('Removed any remaining user action buttons from user table');
-            }
-        }, 100);
-        
-        // More aggressive button removal - only for users table
-        setInterval(() => {
-            const tableBody = document.getElementById('users-table-body');
-            if (tableBody) {
-                // Only remove buttons that are specifically for user management
-                const buttons = tableBody.querySelectorAll('button[onclick*="editUser"], button[onclick*="deleteUser"]');
-                if (buttons.length > 0) {
-                    buttons.forEach(button => button.remove());
-                    console.log('Force removed', buttons.length, 'user action buttons from user table');
-                }
-            }
-        }, 1000);
+        // User table refreshed
+        console.log('User table refreshed');
         
         function updatePagination() {
             const totalPages = Math.ceil(totalUsers / usersPerPage);

@@ -53,10 +53,6 @@ function debugCheckUsers() {
                             <td>${email}</td>
                             <td>${subscription.charAt(0).toUpperCase() + subscription.slice(1)}</td>
                             <td>${status.charAt(0).toUpperCase() + status.slice(1)}</td>
-                            <td>
-                                <button type="button" class="action-btn">Edit</button>
-                                <button type="button" class="action-btn delete-btn">Delete</button>
-                            </td>
                         </tr>
                     `;
                 });
