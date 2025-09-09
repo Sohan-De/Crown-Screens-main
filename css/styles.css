@@ -558,7 +558,7 @@ body {
     
     /* Add margin to first navigation link for better spacing */
     .nav-link:first-of-type {
-        margin-top: 0.5rem;
+        margin-top: 1.5rem;
     }
     
     /* Add subtle hover effect for better visual appeal */
@@ -3988,7 +3988,7 @@ body {
     }
     
     .navbar .nav-link:first-of-type {
-        margin-top: 0 !important;
+        margin-top: 1.5rem !important;
     }
     
     
@@ -4000,7 +4000,7 @@ body {
         height: 350px;
     }
     .navbar .nav-link:first-of-type {
-        margin-top: 0 !important;
+        margin-top: 1.5rem !important;
     }
     .hero-image {
         height: 300px;
@@ -9104,6 +9104,12 @@ body {
 @media (max-width: 390px){
 
     .navbar .nav-link:first-of-type {
-        margin-top: 1.2rem !important;
+        margin-top: 1.5rem !important;
     }  
+}
+
+@media (max-width: 370px){
+    .navbar .nav-link:first-of-type {
+        margin-top: 5rem !important;
+    }
 }

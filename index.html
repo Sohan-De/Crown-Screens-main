@@ -1316,6 +1316,7 @@
                     <div class="mobile-menu-header">
                         <h3 class="mobile-menu-title">Menu</h3>
                     </div>
+                    <a href="index.html" class="nav-link">Home</a>
                     <a href="index.html#features" class="nav-link">Features</a>
                     <a href="index.html#pricing" class="nav-link">Pricing</a>
                     <a href="index.html#contact" class="nav-link">Contact</a>
@@ -2157,17 +2158,6 @@
                             
                             <div class="contact-method">
                                 <div class="method-icon">
-                                    <i class="fas fa-comments"></i>
-                                </div>
-                                <div class="method-content">
-                                    <h4 class="method-title">Live Chat</h4>
-                                    <p class="method-description">Get instant help with our 24/7 live chat support</p>
-                                    <button class="method-link chat-btn">Start Live Chat</button>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-method">
-                                <div class="method-icon">
                                     <i class="fas fa-clock"></i>
                                 </div>
                                 <div class="method-content">
@@ -2331,13 +2321,6 @@
                 contactForm.addEventListener('submit', handleContactFormSubmit);
             }
             
-            // Live chat button functionality
-            const chatBtn = document.querySelector('.chat-btn');
-            if (chatBtn) {
-                chatBtn.addEventListener('click', function() {
-                    alert('Live chat feature coming soon! For now, please use the contact form or email us directly.');
-                });
-            }
         }
         
         async function handleContactFormSubmit(e) {

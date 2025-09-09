@@ -45,6 +45,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     margin-bottom: 80px;
+    align-items: start;
 }
 
 /* Contact Information Styles */
