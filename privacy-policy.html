@@ -136,6 +136,18 @@
             text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
         }
         
+        /* Hide Home link on desktop (1025px and above) */
+        .nav-link.home-link {
+            display: none;
+        }
+        
+        /* Show Home link on tablet and mobile (1024px and below) */
+        @media (max-width: 1024px) {
+            .nav-link.home-link {
+                display: block;
+            }
+        }
+        
         /* Mobile responsive styles for Download Me button */
         @media (max-width: 768px) {
             .nav-link.download-me-neo {
@@ -660,7 +672,7 @@
                 <div class="mobile-menu-header">
                     <h3 class="mobile-menu-title">Menu</h3>
                 </div>
-                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link home-link">Home</a>
                 <a href="index.html#features" class="nav-link">Features</a>
                 <a href="index.html#pricing" class="nav-link">Pricing</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
