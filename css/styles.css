@@ -4623,7 +4623,7 @@ body {
 
 .faq-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-bottom: 4rem;
 }
@@ -4648,6 +4648,7 @@ body {
     background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(0, 255, 136, 0.05));
     opacity: 0;
     transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .faq-item:hover::before {
