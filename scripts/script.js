@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeUserAuth();
     initializeHamburgerMenu();
     
-    // Initialize pricing plans with retry mechanism
-    initializePricingPlansWithRetry();
+    // Initialize pricing plans with retry mechanism - COMMENTED OUT (Pricing section hidden)
+    // initializePricingPlansWithRetry();
 });
 
 // Initialize Hero Section

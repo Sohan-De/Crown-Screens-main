@@ -8365,6 +8365,69 @@ body {
     background: linear-gradient(45deg, #00ff88, #00d4ff);
 }
 
+/* Telegram Button Styles */
+.hero-btn.telegram-support {
+    background: linear-gradient(45deg, #0088cc, #00a8e8);
+    color: white;
+    border: none;
+    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+    animation-delay: 1.5s;
+}
+
+.hero-btn.telegram-support:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 136, 204, 0.6);
+    background: linear-gradient(45deg, #00a8e8, #0088cc);
+    filter: brightness(1.1);
+}
+
+.hero-btn.telegram-channel {
+    background: linear-gradient(45deg, #00a8e8, #0088cc);
+    color: white;
+    border: none;
+    box-shadow: 0 8px 25px rgba(0, 168, 232, 0.4);
+    animation-delay: 1.6s;
+}
+
+.hero-btn.telegram-channel:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 168, 232, 0.6);
+    background: linear-gradient(45deg, #0088cc, #00a8e8);
+    filter: brightness(1.1);
+}
+
+/* Telegram buttons row styling */
+.telegram-buttons {
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.telegram-buttons .hero-btn {
+    background: rgba(0, 136, 204, 0.1);
+    border: 1px solid rgba(0, 136, 204, 0.3);
+    color: #00a8e8;
+    backdrop-filter: blur(10px);
+}
+
+.telegram-buttons .hero-btn:hover {
+    background: linear-gradient(45deg, #0088cc, #00a8e8);
+    border-color: #00a8e8;
+    color: white;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 168, 232, 0.6);
+}
+
+.telegram-buttons .hero-btn .btn-icon {
+    color: #00a8e8;
+    transition: all 0.3s ease;
+}
+
+.telegram-buttons .hero-btn:hover .btn-icon {
+    color: white;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(0, 168, 232, 0.6));
+}
+
 .btn-icon {
     font-size: 1.2rem;
     transition: all 0.3s ease;
@@ -9069,6 +9132,11 @@ body {
         font-size: 0.8rem;
     }
     
+    .telegram-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
     .hero-image {
         height: 350px;
     }
@@ -9095,6 +9163,11 @@ body {
     .hero-btn {
         padding: 0.75rem 1.25rem;
         font-size: 0.75rem;
+    }
+    
+    .telegram-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
     }
     
     .btn-icon {
