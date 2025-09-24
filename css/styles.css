@@ -167,6 +167,15 @@ body {
     align-items: center;
 }
 
+/* Logo icon glow on hover (matches logo text glow) */
+.nav-logo img {
+    transition: filter 0.3s ease;
+}
+
+.nav-logo a:hover img {
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.6)) drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+}
+
 .logo-text {
     font-size: 1.8rem;
     font-weight: 700;
@@ -3556,6 +3565,15 @@ body {
 .footer-links {
     display: flex;
     gap: 2rem;
+}
+
+/* Footer logo icon glow on hover */
+.footer-logo img {
+    transition: filter 0.3s ease;
+}
+
+.footer-logo a:hover img {
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.6)) drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
 }
 
 .footer-link {
